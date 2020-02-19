@@ -124,7 +124,7 @@ class InferCoQA():
 
 			coqa_feature = coqa_features[example_indices[0].item()]
 			unique_id = int(coqa_feature.unique_id)
-			all_results.append(RawResult(unique_id=unique_id,score=score[0].cpu(),length=input_ids.size(1)))
+			all_results.append(RawResult(unique_id=unique_id,score=score[0].cuda(),length=input_ids.size(1)))
 
 		output_prediction_file = "predictions.json"
 		output_nbest_file = "nbest_predictions.json"
